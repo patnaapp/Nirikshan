@@ -2,6 +2,9 @@ package bih.nic.in.fieldinspection.utilities;
 
 import android.location.Location;
 
+import bih.nic.in.fieldinspection.entity.CommiteeDetails;
+import bih.nic.in.fieldinspection.entity.UserLogin;
+
 
 public class GlobalVariables {
 
@@ -9,6 +12,7 @@ public class GlobalVariables {
     public static final String RECORD_PARAM = "Details";
     public static boolean isOffline = false;
     public static boolean isOfflineGPS = false;
+    public static CommiteeDetails commiteeDetails;
     public static int uploadNo=0;
     public static int listSize=0;
     public final static String SHARED_PREFERENCE_STRING = "bih.in.postmetric";
@@ -23,6 +27,8 @@ public class GlobalVariables {
     public final static String FINALIZED_PARAM = "finalized";
     public final static String APPLIED_PARAM = "Applied";
     public final static String COURCE_DETAILS_PARAM = "Applied";
+
+    public static UserLogin LoggedUser;
 
     public static String REPORTTYPE="ReportType";
     public static int rtype=0;

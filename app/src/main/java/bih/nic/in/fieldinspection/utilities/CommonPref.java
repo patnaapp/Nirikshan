@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 
+import bih.nic.in.fieldinspection.entity.CommiteeDetails;
+import bih.nic.in.fieldinspection.entity.UserLogin;
+
 
 public class CommonPref {
 
@@ -30,6 +33,126 @@ public class CommonPref {
         this.context = context;
         activity = (AppCompatActivity) context;
         mSharedPreferences = context.getSharedPreferences(GlobalVariables.SHARED_PREFERENCE_STRING, Context.MODE_PRIVATE);
+    }
+
+
+    public static void setUserDetails(Context context, UserLogin userInfo) {
+
+        String key = "_USER_DETAILS";
+
+        SharedPreferences prefs = context.getSharedPreferences(key,
+                Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = prefs.edit();
+
+        editor.putString("UserID", userInfo.getUserID());
+        editor.putString("Password", userInfo.getPassword());
+        editor.putString("Role_Id", userInfo.getRole_Id());
+        editor.putString("User_Name", userInfo.getUser_Name());
+        editor.putString("Dist_Code", userInfo.getDist_Code());
+        editor.putString("Dist_Name", userInfo.getDist_Name());
+        editor.putString("MobileNo", userInfo.getMobileNo());
+        editor.putString("Mail_Id", userInfo.getMail_Id());
+        editor.putString("Designation", userInfo.getDesignation());
+        editor.putString("IsNewUser", userInfo.getIsNewUser());
+        editor.putString("isLocked", userInfo.getIsLocked());
+        editor.putString("IsAuthenticated", userInfo.getIsAuthenticated());
+        editor.putString("Token", userInfo.getToken());
+        editor.putString("skey", userInfo.getSkey());
+        editor.putString("cap", userInfo.getCap());
+
+
+        editor.commit();
+
+    }
+
+    public static UserLogin getUserDetails(Context context) {
+
+        String key = "_USER_DETAILS";
+        UserLogin userInfo = new UserLogin();
+        SharedPreferences prefs = context.getSharedPreferences(key,
+                Context.MODE_PRIVATE);
+
+        userInfo.setUserID(prefs.getString("UserID", ""));
+        userInfo.setPassword(prefs.getString("Password", ""));
+        userInfo.setRole_Id(prefs.getString("Role_Id", ""));
+        userInfo.setUser_Name(prefs.getString("User_Name", ""));
+        userInfo.setDist_Code(prefs.getString("Dist_Code", ""));
+        userInfo.setDist_Name(prefs.getString("Dist_Name", ""));
+        userInfo.setMobileNo(prefs.getString("MobileNo", ""));
+        userInfo.setMail_Id(prefs.getString("Mail_Id", ""));
+        userInfo.setDesignation(prefs.getString("Designation", ""));
+        userInfo.setIsNewUser(prefs.getString("IsNewUser", ""));
+        userInfo.setIsLocked(prefs.getString("isLocked", ""));
+        userInfo.setIsAuthenticated(prefs.getString("IsAuthenticated", ""));
+        userInfo.setSkey(prefs.getString("skey", ""));
+        userInfo.setCap(prefs.getString("cap", ""));
+
+        return userInfo;
+    }
+
+    public static void setCommiteeDetails(Context context, CommiteeDetails commiteeDetails) {
+
+        String key = "_COMM_DETAILS";
+
+        SharedPreferences prefs = context.getSharedPreferences(key,
+                Context.MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = prefs.edit();
+
+        editor.putString("CommitteeID", commiteeDetails.getCommittee_ID());
+        editor.putString("CommitteeName", commiteeDetails.getCommitteeName());
+        editor.putString("User_Name", commiteeDetails.getUser_Name());
+        editor.putString("Open_Date", commiteeDetails.getOpen_Date());
+        editor.putString("Time", commiteeDetails.getTime());
+        editor.putString("Dist_Code", commiteeDetails.getDist_Code());
+        editor.putString("Dist_Name", commiteeDetails.getDist_Name());
+        editor.putString("Block_Code", commiteeDetails.getBlock_Code());
+        editor.putString("Block_Name", commiteeDetails.getBlock_Name());
+        editor.putString("Panch_Code", commiteeDetails.getPanch_Code());
+        editor.putString("Panch_Name", commiteeDetails.getPanch_Name());
+        editor.putString("No_Of_Member", commiteeDetails.getNo_Of_Member());
+        editor.putString("F_Date", commiteeDetails.getFrom_Date());
+        editor.putString("T_Date", commiteeDetails.getTo_Date());
+        editor.putString("Duration", commiteeDetails.getDuration());
+        editor.putString("Location", commiteeDetails.getLocation());
+        editor.putString("IsFinalize", commiteeDetails.getIsFinalize());
+        editor.putString("skey", commiteeDetails.getSkey());
+        editor.putString("cap", commiteeDetails.getCap());
+
+
+        editor.commit();
+
+    }
+
+    public static CommiteeDetails getCommiteeDetails(Context context) {
+
+        String key = "_COMM_DETAILS";
+        CommiteeDetails commiteeDetails = new CommiteeDetails();
+        SharedPreferences prefs = context.getSharedPreferences(key,
+                Context.MODE_PRIVATE);
+
+        commiteeDetails.setCommittee_ID(prefs.getString("CommitteeID", ""));
+        commiteeDetails.setCommitteeName(prefs.getString("CommitteeName", ""));
+        commiteeDetails.setUser_Name(prefs.getString("User_Name", ""));
+        commiteeDetails.setOpen_Date(prefs.getString("Open_Date", ""));
+        commiteeDetails.setTime(prefs.getString("Time", ""));
+        commiteeDetails.setDist_Code(prefs.getString("Dist_Code", ""));
+        commiteeDetails.setDist_Name(prefs.getString("Dist_Name", ""));
+        commiteeDetails.setBlock_Code(prefs.getString("Block_Code", ""));
+        commiteeDetails.setBlock_Name(prefs.getString("Block_Name", ""));
+        commiteeDetails.setPanch_Code(prefs.getString("Panch_Code", ""));
+        commiteeDetails.setPanch_Name(prefs.getString("Panch_Name", ""));
+        commiteeDetails.setNo_Of_Member(prefs.getString("No_Of_Member", ""));
+        commiteeDetails.setFrom_Date(prefs.getString("F_Date", ""));
+        commiteeDetails.setTo_Date(prefs.getString("T_Date", ""));
+        commiteeDetails.setDuration(prefs.getString("Duration", ""));
+        commiteeDetails.setLocation(prefs.getString("Location", ""));
+        commiteeDetails.setIsFinalize(prefs.getString("IsFinalize", ""));
+        commiteeDetails.setSkey(prefs.getString("skey", ""));
+        commiteeDetails.setCap(prefs.getString("cap", ""));
+
+        return commiteeDetails;
     }
 
 

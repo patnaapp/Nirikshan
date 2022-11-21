@@ -11,12 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:background="@color/color_footer">
+        android:background="#55ACEE">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Services provided by: NIC Bihar"
-            android:textColor="@color/color_white"
+            android:textColor="@color/color_black"
             android:padding="2dp"
             android:textSize="10dp"/>
     </LinearLayout>

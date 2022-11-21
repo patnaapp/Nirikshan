@@ -1,6 +1,7 @@
 package bih.nic.in.fieldinspection.activity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -20,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -47,6 +49,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle("Nirikshan");
 
         dataBaseHelper = new DataBaseHelper(getApplicationContext());
         dialog = new ProgressDialog(this);
@@ -55,14 +58,23 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         View headerView = navigationView.getHeaderView(0);
+
+
         TextView navUsername = (TextView) headerView.findViewById(R.id.navUsername);
         TextView navMobileNum = (TextView) headerView.findViewById(R.id.nav_mobile_no);
 
-        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_profile, R.id.nav_sync, R.id.nav_view_incentive_report,R.id.nav_change_password, R.id.nav_logOut).setDrawerLayout(drawer).build();
+       mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.nav_home, R.id.nav_profile, R.id.nav_sync, R.id.nav_view_incentive_report,R.id.nav_change_password, R.id.nav_logOut).setDrawerLayout(drawer).build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //navTitle = navigationView.getHeaderView(0).findViewById(R.id.navigationHeadTextView);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
 
         Menu menu = navigationView.getMenu();
         MenuItem profile = menu.findItem(R.id.nav_profile);
@@ -90,7 +102,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 break;
             case R.id.nav_sync:
 
-
+                Toast.makeText(this, "Sync", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.nav_view_incentive_report:

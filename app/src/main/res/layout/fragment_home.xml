@@ -21,8 +21,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/header"
             android:layout_marginTop="8dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginRight="24dp">
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -46,7 +46,7 @@
                         android:textSize="12sp"/>
 
                     <TextView
-                        android:id="@+id/tv_username"
+                        android:id="@+id/tv_Commitee_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Text"
@@ -74,15 +74,15 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="जिला"
-                            android:textColor="@color/colorGreyDark"
+                            android:text="User Name"
+                            android:textColor="@color/colorPrimaryDark"
                             android:textSize="12sp"/>
 
                         <TextView
-                            android:id="@+id/tv_district"
+                            android:id="@+id/tv_username"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Text"
+                            android:text="Kumar Shubham"
                             android:textColor="@android:color/black"
                             android:textSize="14sp"/>
                     </LinearLayout>
@@ -97,18 +97,19 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="प्रखंड"
-                            android:textColor="@color/colorGreyDark"
+                            android:text="Designation"
+                            android:textColor="@color/colorPrimaryDark"
                             android:textSize="12sp"/>
 
                         <TextView
-                            android:id="@+id/tv_block"
+                            android:id="@+id/tv_desig"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Text"
                             android:textColor="@android:color/black"
                             android:textSize="14sp"/>
                     </LinearLayout>
+
 
                 </LinearLayout>
 
@@ -139,12 +140,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="स्वास्थ्य उप केंद्र"
-                            android:textColor="@color/colorGreyDark"
+                            android:text="District"
+                            android:textColor="@color/colorPrimaryDark"
                             android:textSize="12sp"/>
 
                         <TextView
-                            android:id="@+id/tv_hscname"
+                            android:id="@+id/tv_district"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Text"
@@ -163,12 +164,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="पंचायत"
-                            android:textColor="@color/colorGreyDark"
+                            android:text="Block"
+                            android:textColor="@color/colorPrimaryDark"
                             android:textSize="12sp"/>
 
                         <TextView
-                            android:id="@+id/tv_panchayat"
+                            android:id="@+id/tv_block"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Text"
@@ -187,12 +188,12 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="आंगनवाड़ी"
-                            android:textColor="@color/colorGreyDark"
+                            android:text="Panchayat"
+                            android:textColor="@color/colorPrimaryDark"
                             android:textSize="12sp"/>
 
                         <TextView
-                            android:id="@+id/tv_aanganwadi"
+                            android:id="@+id/tv_panchayat"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Text"
@@ -204,280 +205,550 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+
+
+
         <LinearLayout
+            android:id="@+id/button_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_below="@+id/ll_pan"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentBottom="true"
             android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/edt_persn_details"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:id="@+id/rl_educataion"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tv_report"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:ellipsize="marquee"
-                android:marqueeRepeatLimit="marquee_forever"
-                android:padding="5dp"
-                android:textColor="#DD4F42"
-                android:fadingEdge="horizontal"
-                android:scrollHorizontally="true"
-                android:singleLine="true"
-                android:textSize="14sp" />
+                    <ImageView
+                        android:id="@+id/img_profile"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/edu"/>
+                    <TextView
+                        android:layout_below="@+id/img_profile"
 
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Education"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_gravity="center"
+                        android:textSize="11sp"
+                        android:paddingLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:paddingRight="10dp"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="normal"/>
+                </RelativeLayout>
 
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/apply_sclrshp"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_applyschloarship"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/hosp" />
+                    <TextView
+                        android:layout_below="@+id/img_applyschloarship"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hospitals"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:textColor="#000"
+                        android:layout_gravity="center"
+                        android:textSize="11sp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="normal"/>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/apply_sclrshp10"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_applyschloarship10"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/icds" />
+                    <TextView
+                        android:layout_below="@+id/img_applyschloarship10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ICDS"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:textColor="#000"
+                        android:layout_gravity="center"
+                        android:textSize="11sp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="normal"/>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/button_layout45"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/edt_persn_details45"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_profile45"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/procurement"/>
+                    <TextView
+                        android:layout_below="@+id/img_profile45"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Procurement"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_gravity="center"
+                        android:textSize="11sp"
+                        android:paddingLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:paddingRight="10dp"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="normal"/>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/apply_sclrshp45"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_applyschloarship45"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/hostel" />
+                    <TextView
+                        android:layout_below="@+id/img_applyschloarship45"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SC/ST/Minority Hostels"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:textColor="#000"
+                        android:layout_gravity="center"
+                        android:textSize="11sp"
+                        android:paddingLeft="10dp"
+                        android:maxLines="2"
+                        android:paddingRight="10dp"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="normal"/>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/apply_sclrshp1045"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_applyschloarship1045"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/food" />
+                    <TextView
+                        android:layout_below="@+id/img_applyschloarship1045"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Food &amp; Civil Supplies"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:textColor="#000"
+                        android:layout_gravity="center"
+                        android:textSize="11sp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="normal"/>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp"
+            android:id="@+id/button_layout453"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <LinearLayout
-                android:layout_marginRight="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/edt_persn_details453"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1">
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="वित्तीय वर्ष"
-                    android:textColor="@color/color_black"
-                    android:textSize="12sp"/>
+                    android:layout_height="match_parent">
 
-                <Spinner
-                    android:background="@drawable/spinner_bg1"
-                    android:layout_marginTop="4dp"
-                    android:id="@+id/sp_fn_year"
+                    <ImageView
+                        android:id="@+id/img_profile453"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/water"/>
+                    <TextView
+                        android:layout_below="@+id/img_profile453"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Rural Water Supply"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_gravity="center"
+                        android:textSize="11sp"
+                        android:paddingLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:paddingRight="10dp"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="normal"/>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/apply_sclrshp453"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1">
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="36dp" />
-            </LinearLayout>
+                    android:layout_height="match_parent">
 
-            <LinearLayout
-                android:layout_marginLeft="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                    <ImageView
+                        android:id="@+id/img_applyschloarship453"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/road" />
+                    <TextView
+                        android:layout_below="@+id/img_applyschloarship453"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Status Of Rural Road"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:textColor="#000"
+                        android:layout_gravity="center"
+                        android:textSize="11sp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="normal"/>
+                </RelativeLayout>
 
-                <TextView
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/apply_sclrshp10453"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1">
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="वित्तीय महीना"
-                    android:textColor="@color/color_black"
-                    android:textSize="12sp"/>
+                    android:layout_height="match_parent">
 
-                <Spinner
-                    android:background="@drawable/spinner_bg1"
-                    android:layout_marginTop="4dp"
-                    android:id="@+id/sp_fn_month"
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp" />
-            </LinearLayout>
+                    <ImageView
+                        android:id="@+id/img_applyschloarship10453"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/panchayat_bhawan" />
+                    <TextView
+                        android:layout_below="@+id/img_applyschloarship10453"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Panchayat Sarkar Bhawan"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:textColor="#000"
+                        android:maxLines="2"
+                        android:layout_gravity="center"
+                        android:textSize="11sp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="normal"/>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
 
         <LinearLayout
-            android:visibility="gone"
-            android:id="@+id/ll_hsc_list"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
+            android:id="@+id/button_layout4531"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/edt_persn_details4531"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="स्वास्थ्य उप केंद्र"
-                android:textColor="@color/color_black"
-                android:textSize="12sp"/>
+                    <ImageView
+                        android:id="@+id/img_profile4531"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/street_light"/>
+                    <TextView
+                        android:layout_below="@+id/img_profile4531"
 
-            <Spinner
-                android:background="@drawable/spinner_bg1"
-                android:layout_marginTop="4dp"
-                android:id="@+id/sp_hsc"
-                android:layout_width="match_parent"
-                android:layout_height="36dp" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Street Light"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_gravity="center"
+                        android:textSize="11sp"
+                        android:paddingLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:paddingRight="10dp"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="normal"/>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/apply_sclrshp4531"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_applyschloarship4531"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/inspection" />
+                    <TextView
+                        android:layout_below="@+id/img_applyschloarship4531"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Statutory Inspection "
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:textColor="#000"
+                        android:layout_gravity="center"
+                        android:textSize="11sp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="normal"/>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/apply_sclrshp104531"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="10dp"
+                android:visibility="gone"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="1">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:src="@drawable/ic_person_black_60dp"
+                        android:layout_margin="5dp"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/img_applyschloarship104531"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"/>
+                    <TextView
+                        android:layout_below="@+id/img_applyschloarship104531"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Panchayat Sarkar Bhawan"
+                        android:gravity="center"
+                        android:layout_marginTop="2dp"
+                        android:textColor="#000"
+                        android:layout_gravity="center"
+                        android:textSize="11sp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:fontFamily="sans-serif-black"
+                        android:textStyle="normal"/>
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_margin="16dp"
-            android:visibility="gone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/ll_hsc"
-            android:orientation="horizontal"
-            android:weightSum="2">
 
-            <LinearLayout
-                android:layout_marginRight="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="यूजर रोल"
-                    android:textColor="@color/color_black"
-                    android:textSize="12sp"/>
-
-                <Spinner
-                    android:background="@drawable/spinner_bg1"
-                    android:layout_marginTop="4dp"
-                    android:id="@+id/sp_userrole"
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_marginLeft="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="आशा वर्कर"
-                    android:textColor="@color/color_black"
-                    android:id="@+id/tv_spworker"
-                    android:textSize="12sp"/>
-
-                <Spinner
-                    android:background="@drawable/spinner_bg1"
-                    android:layout_marginTop="4dp"
-                    android:id="@+id/sp_worker"
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp" />
-
-                <!--                <Spinner-->
-                <!--                    android:background="@drawable/spinner_bg1"-->
-                <!--                    android:layout_marginTop="4dp"-->
-                <!--                    android:id="@+id/sp_facilitator"-->
-                <!--                    android:visibility="gone"-->
-                <!--                    android:layout_width="match_parent"-->
-                <!--                    android:layout_height="36dp" />-->
-            </LinearLayout>
-        </LinearLayout>
-
-        <RelativeLayout
-            android:visibility="gone"
-            android:background="@drawable/shape_adapter_cell"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            android:padding="4dp"
-            android:id="@+id/rl_total_amount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_centerHorizontal="true"
-                android:id="@+id/tv_total"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="कुल दावा राशि(दैनिक+मासिक): 24134"
-                android:textSize="13sp"
-                android:textStyle="normal"
-                android:textColor="@color/color_black"/>
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:visibility="gone"
-            android:id="@+id/ll_dmf_tab"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="4dp"
-            android:background="@color/holo_gray_light"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="3">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
-                <TextView
-                    android:id="@+id/tv_daily"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="दैनिक कार्य"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorGreyDark"/>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
-                <TextView
-                    android:id="@+id/tv_monthly"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="मासिक कार्य"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorGreyDark"/>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
-                <TextView
-                    android:id="@+id/tv_finalize"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="अंतिम रूप दें"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorGreyDark"/>
-            </RelativeLayout>
-
-        </LinearLayout>
-
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scrollbars="none">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <!-- Report-->
-
-
-                <!-- Button-->
-
-
-
-
-            </LinearLayout>
-
-        </androidx.core.widget.NestedScrollView>
 
     </LinearLayout>
 

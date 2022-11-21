@@ -14,4 +14,8 @@
     <string name="menu_sync">Synchronize</string>
     <string name="menu_change_password">Change Password</string>
     <string name="menu_incentive_report">View Incentive Report </string>
+    <string name="authenticating">Authenticating ...</string>
+    <string name="authentication_failed">Authentication failed ...</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
