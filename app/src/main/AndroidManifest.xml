@@ -53,7 +53,7 @@
         android:exported="true"
         android:fullBackupContent="@xml/backup_rules"
         android:hardwareAccelerated="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -63,70 +63,70 @@
         tools:node="merge"
         tools:targetApi="31">
         <activity
-            android:name=".activity.CommitteeSelectionActivity"
+            android:name="bih.nic.in.Nirikshan.activity.CommitteeSelectionActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.PanchayatSarkarBhwanActivity"
+            android:name="bih.nic.in.Nirikshan.activity.PanchayatSarkarBhwanActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.RuralRoadActivity"
+            android:name="bih.nic.in.Nirikshan.activity.RuralRoadActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.RuralWaterActivity"
+            android:name="bih.nic.in.Nirikshan.activity.RuralWaterActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.PDSActivity"
+            android:name="bih.nic.in.Nirikshan.activity.PDSActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.HostelActivity"
+            android:name="bih.nic.in.Nirikshan.activity.HostelActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.ProcurementActivity"
+            android:name="bih.nic.in.Nirikshan.activity.ProcurementActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.HospitalActivity"
+            android:name="bih.nic.in.Nirikshan.activity.HospitalActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.EducationActivity"
+            android:name="bih.nic.in.Nirikshan.activity.EducationActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.DashboardActivity"
+            android:name="bih.nic.in.Nirikshan.activity.DashboardActivity"
             android:exported="true"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
@@ -137,14 +137,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.LoginActivity"
+            android:name="bih.nic.in.Nirikshan.activity.LoginActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity.SplashActivity"
+            android:name="bih.nic.in.Nirikshan.activity.SplashActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
