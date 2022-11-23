@@ -12,10 +12,15 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 import bih.nic.in.Nirikshan.api.ApiCall;
 import bih.nic.in.Nirikshan.databasehelper.DataBaseHelper;
+import bih.nic.in.Nirikshan.entity.ControlModel;
+import bih.nic.in.Nirikshan.entity.GetControlResponse;
+import bih.nic.in.Nirikshan.entity.GetInspectionFormResponse;
+import bih.nic.in.Nirikshan.entity.InspectionFormModel;
 import bih.nic.in.Nirikshan.entity.UserLogin;
 import bih.nic.in.Nirikshan.security.Encriptor;
 import bih.nic.in.Nirikshan.security.RandomString;
@@ -41,6 +46,7 @@ public class LoginActivity extends Activity {
     String username="",password="",_encUserId="",_encPassword="";
     ProgressDialog progressBar;
     ProgressDialog dialog ;
+    ProgressDialog dialogNew;//New
 
 
     @Override
@@ -50,6 +56,9 @@ public class LoginActivity extends Activity {
         dialog= new ProgressDialog(LoginActivity.this);
         this.dialog.setCanceledOnTouchOutside(false);
         this.dialog.setMessage(getResources().getString(R.string.authenticating));
+
+        dialogNew= new ProgressDialog(LoginActivity.this);
+        this.dialogNew.setCanceledOnTouchOutside(false);
 
         initialization();
 
@@ -148,7 +157,9 @@ public class LoginActivity extends Activity {
 
 
                             CommonPref.setUserDetails(getApplicationContext(), GlobalVariables.LoggedUser);
-                            start();
+
+                            GetControl_details();
+                            //start();
 
                         }else {
                             Toast.makeText(LoginActivity.this, getResources().getString(R.string.authentication_failed), Toast.LENGTH_SHORT).show();
@@ -189,5 +200,61 @@ public class LoginActivity extends Activity {
         iUserHome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(iUserHome);
         finish();
+    }
+
+    private void GetControl_details(){
+        dialogNew.setMessage("Loading...");
+        dialogNew.show();
+        String Enc_unit_Id = "",Enc_capId = "", Enc_skey = "", RandomNo,Enc_UserId = "",CapId="";
+        Encriptor encriptor = new Encriptor();
+        try {
+            RandomNo = Utiilties.getTimeStamp();
+            CapId = RandomString.randomAlphaNumeric(8);
+
+            Enc_capId = encriptor.Encrypt(Enc_capId, RandomNo);
+            Enc_skey = encriptor.Encrypt(RandomNo, CommonPref.CIPER_KEY);
+
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        GetControlResponse getControlResponse = new GetControlResponse("" + Enc_skey, "" + Enc_capId);
+        Call<GetControlResponse> call_accreditionType = ApiCall.getSeervice().getControlDetails(getControlResponse);
+        call_accreditionType.enqueue(new Callback<GetControlResponse>() {
+            @Override
+            public void onResponse(Call<GetControlResponse> call, Response<GetControlResponse> response) {
+
+
+                dialogNew.dismiss();
+                if (response.code() == 200){
+
+                    if (response.body()!=null){
+                        if (response.body().getData()!=null) {
+                            if (response.body().getData().size() > 0) {
+                                ArrayList<ControlModel> result = new ArrayList<>();//true//InspectionFormModel
+                                try {
+                                    for (int i = 0; i < response.body().getData().size(); i++) {
+                                        result.add(new ControlModel(response.body().getData().get(i), ""));
+                                    }
+                                } catch (Exception e) {
+                                    e.printStackTrace();
+                                }
+                                if (result.size() > 0) {
+                                    Log.d("Resultgfg", "" + result);
+                                    //setuprecyclerdata(result);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @Override
+            public void onFailure(Call<GetControlResponse> call, Throwable t) {
+
+            }
+        });
+
     }
 }

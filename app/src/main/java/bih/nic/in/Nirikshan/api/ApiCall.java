@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import bih.nic.in.Nirikshan.entity.AppDetailsResponse;
 import bih.nic.in.Nirikshan.entity.CommiteeDetailsModel;
 import bih.nic.in.Nirikshan.entity.GetCommitteList;
+import bih.nic.in.Nirikshan.entity.GetControlResponse;
+import bih.nic.in.Nirikshan.entity.GetInspectionFormResponse;
 import bih.nic.in.Nirikshan.entity.UserLogin;
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -56,6 +58,12 @@ public class ApiCall {
 
         @POST("GetCommitteeDetails")
         Call<CommiteeDetailsModel> getCommitteDetails(@Body CommiteeDetailsModel commiteeDetailsModel);
+
+        @POST("GetSubUnitOptionList")
+        Call<GetInspectionFormResponse> getInspectionDetails(@Body GetInspectionFormResponse getInspectionFormResponse);
+
+        @POST("GetControlList")
+        Call<GetControlResponse> getControlDetails(@Body GetControlResponse getInspectionFormResponse);
 
 
 

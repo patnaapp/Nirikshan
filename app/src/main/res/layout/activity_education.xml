@@ -3,8 +3,7 @@
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".activity.EducationActivity">
+android:layout_height="match_parent">
 
 <com.google.android.material.appbar.AppBarLayout
     android:layout_width="match_parent"
@@ -195,41 +194,91 @@ tools:context=".activity.EducationActivity">
 
     </LinearLayout>
 
+
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginRight="16dp"
         android:layout_marginBottom="12dp"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_edu"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="8dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_height="wrap_content" />
 
-            <TextView
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/doc_photo"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp">
+        <RelativeLayout
+
+            android:layout_width="0dp"
+            android:layout_weight=".5"
+            android:layout_height="200dp"
+            android:padding="1dp"
+            android:background="@drawable/rect"
+            >
+            <ImageView
+                android:id="@+id/img_pic1"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"/>
+
+            <ImageView
+                android:id="@+id/viewIMG1"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignTop="@+id/img_pic1"
+                android:layout_alignRight="@+id/img_pic1"
+                android:onClick="onClick_ViewImg1"
+                android:src="@drawable/view"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/take_pic_anganbari"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Committee Name"
-                android:textColor="@color/color_black"
-                android:textSize="12sp"
-                android:textStyle="bold" />
+                android:layout_centerInParent="true"
+                android:orientation="vertical">
 
-            <Spinner
-                android:id="@+id/spn_commt_name"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginTop="4dp"
-                android:background="@drawable/spinner_bg1" />
-        </LinearLayout>
-
-
-
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/ic_action_photo"/>
+                <LinearLayout
+                    android:id="@+id/take_pic_anganbari1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="Photo"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:textColor="@color/holo_red_dark"
+                        android:layout_gravity="center_vertical"
+                        android:text="*"/>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+        <View
+            android:layout_width="0dp"
+            android:layout_weight=".005"
+            android:layout_height="200dp"/>
 
     </LinearLayout>
 
