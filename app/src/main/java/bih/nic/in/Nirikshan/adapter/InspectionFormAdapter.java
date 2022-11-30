@@ -53,12 +53,6 @@ public class InspectionFormAdapter extends RecyclerView.Adapter<InspectionFormAd
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        //TextView tv_pan_name, tv_reg_no, tv_eqi_name, tv_land_area, tv_order_date, tv_order_time, tv_status, tv_re_status;
-        TextView tv_booking_no, tv_farmer_equi_name, tv_pacs, tv_land_area, tv_booking_date, tv_booking_time, tv_booking_duration, tv_pacs_booking_date, tv_pacs_booking_time,
-                tv_pacs_booking_duration, tv_start_time, tv_end_time, tv_payable_amount, tv_payable_status, tv_booking_status;
-        Button btn_approve, btn_reject;
-        String EquipmentOrder_id;
-        CardView card_view;
         LinearLayout ll_pacs_approved, ll_use_status;
         TextView tv_textview;
 
@@ -83,19 +77,16 @@ public class InspectionFormAdapter extends RecyclerView.Adapter<InspectionFormAd
 
                 tv_textview.setText(equipmentOrderByFarmer.getOption_Name());
 
-                if(equipmentOrderByFarmer.getControl_ID().equalsIgnoreCase("T")){
+                if (equipmentOrderByFarmer.getControl_ID().equalsIgnoreCase("T")) {
                     et_edittext.setVisibility(View.VISIBLE);
                     spn_spinner.setVisibility(View.GONE);
-                }else if(equipmentOrderByFarmer.getControl_ID().equalsIgnoreCase("D1")){
+                } else if (equipmentOrderByFarmer.getControl_ID().equalsIgnoreCase("D1")) {
                     et_edittext.setVisibility(View.GONE);
                     spn_spinner.setVisibility(View.VISIBLE);
-                }else if(equipmentOrderByFarmer.getControl_ID().equalsIgnoreCase("D2")){
+                } else if (equipmentOrderByFarmer.getControl_ID().equalsIgnoreCase("D2")) {
                     et_edittext.setVisibility(View.GONE);
                     spn_spinner.setVisibility(View.VISIBLE);
                 }
-
-
-
 
 
             }

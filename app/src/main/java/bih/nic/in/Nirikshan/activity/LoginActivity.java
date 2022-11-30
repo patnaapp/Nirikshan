@@ -244,6 +244,7 @@ public class LoginActivity extends Activity {
                                 if (result.size() > 0) {
                                     Log.d("Resultgfg", "" + result);
                                     //setuprecyclerdata(result);
+                                    start();
                                 }
                             }
                         }
