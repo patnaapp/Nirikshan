@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.CommitteeSelectionActivity">
+    tools:context="bih.nic.in.Nirikshan.activity.CommitteeSelectionActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -245,7 +245,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Committee Name"
+                        android:text="Team Name"
                         android:textColor="@color/color_black"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -300,7 +300,7 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="Committee Id"
+                                android:text="Team Id"
                                 android:layout_weight="0.4"
                                 android:textStyle="bold"
                                 android:textColor="@color/colorPrimaryDark"
@@ -336,7 +336,7 @@
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="Committee Name"
+                                android:text="Team Name"
                                 android:layout_weight="0.4"
                                 android:textStyle="bold"
                                 android:textColor="@color/colorPrimaryDark"

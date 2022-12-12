@@ -19,6 +19,7 @@ import retrofit2.http.POST;
 
 public class ApiCall {
     private static final String ROOT_URL = "http://10.133.20.157/Api/";
+    //private static final String ROOT_URL = "http://192.168.217.111/Nirikshan_API/Api/";
 
 
 

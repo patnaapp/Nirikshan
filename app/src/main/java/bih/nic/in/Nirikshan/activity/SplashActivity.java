@@ -34,6 +34,7 @@ import bih.nic.in.Nirikshan.api.ApiCall;
 import bih.nic.in.Nirikshan.databasehelper.DataBaseHelper;
 import bih.nic.in.Nirikshan.entity.AppDetailsResponse;
 import bih.nic.in.Nirikshan.entity.AppVersion;
+import bih.nic.in.Nirikshan.utilities.CommonPref;
 import bih.nic.in.Nirikshan.utilities.Utiilties;
 import bih.nic.in.fieldinspection.R;
 import retrofit2.Call;
@@ -281,22 +282,22 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-//                String userid = CommonPref.getUserDetails(SplashActivity.this).getUserId();
-//                if( userid.equalsIgnoreCase("")) {
-//                    Intent i;
-//                    i = new Intent(getApplicationContext(), LoginActivity.class);
-//                    startActivity(i);
-//                    finish();
-//                }else {
-//                    Intent i;
-//                    i = new Intent(getApplicationContext(), DashboardActivity.class);
-//                    startActivity(i);
-//                    finish();
-//                }
-                Intent i;
-                i = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(i);
-                finish();
+                String userid = CommonPref.getUserDetails(SplashActivity.this).getUserID();
+                if( userid.equalsIgnoreCase("")) {
+                    Intent i;
+                    i = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(i);
+                    finish();
+                }else {
+                    Intent i;
+                    i = new Intent(getApplicationContext(), CommitteeSelectionActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+//                Intent i;
+//                i = new Intent(getApplicationContext(), LoginActivity.class);
+//                startActivity(i);
+//                finish();
             }
         }, 2000);
     }

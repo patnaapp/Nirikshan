@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -18,6 +19,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import bih.nic.in.Nirikshan.activity.CommitteeSelectionActivity;
+import bih.nic.in.Nirikshan.databasehelper.DataBaseHelper;
+import bih.nic.in.Nirikshan.entity.ControlModel;
+import bih.nic.in.Nirikshan.entity.GetCommitteList;
 import bih.nic.in.Nirikshan.entity.InspectionFormModel;
 import bih.nic.in.fieldinspection.R;
 import retrofit2.Call;
@@ -27,6 +32,11 @@ import retrofit2.Response;
 public class InspectionFormAdapter extends RecyclerView.Adapter<InspectionFormAdapter.ViewHolder> {
     private final Context mctx;
     private final ArrayList<InspectionFormModel> inspectionFormModels;
+    DataBaseHelper dataBaseHelper;
+    ArrayList<ControlModel> ControlList = new ArrayList<ControlModel>();
+    Spinner spn_spinner;
+    ArrayList<String> controlNameArray;
+    ArrayAdapter<String> controladapter;
 
     public InspectionFormAdapter(Context mctx, ArrayList<InspectionFormModel> inspectionFormModelArrayList) {
         this.mctx = mctx;
@@ -42,7 +52,8 @@ public class InspectionFormAdapter extends RecyclerView.Adapter<InspectionFormAd
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.bind(inspectionFormModels.get(position));
+        InspectionFormModel form=inspectionFormModels.get(position);
+        holder.bind(form);
 
     }
 
@@ -57,7 +68,7 @@ public class InspectionFormAdapter extends RecyclerView.Adapter<InspectionFormAd
         TextView tv_textview;
 
         EditText et_edittext;
-        Spinner spn_spinner;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -77,21 +88,44 @@ public class InspectionFormAdapter extends RecyclerView.Adapter<InspectionFormAd
 
                 tv_textview.setText(equipmentOrderByFarmer.getOption_Name());
 
-                if (equipmentOrderByFarmer.getControl_ID().equalsIgnoreCase("T")) {
+                if (equipmentOrderByFarmer.getControl_ID().equalsIgnoreCase("T1")) {
+                    et_edittext.setVisibility(View.VISIBLE);
+                    spn_spinner.setVisibility(View.GONE);
+                } else if (equipmentOrderByFarmer.getControl_ID().equalsIgnoreCase("T2")) {
                     et_edittext.setVisibility(View.VISIBLE);
                     spn_spinner.setVisibility(View.GONE);
                 } else if (equipmentOrderByFarmer.getControl_ID().equalsIgnoreCase("D1")) {
                     et_edittext.setVisibility(View.GONE);
                     spn_spinner.setVisibility(View.VISIBLE);
+                    loadSpinner("D1");
                 } else if (equipmentOrderByFarmer.getControl_ID().equalsIgnoreCase("D2")) {
                     et_edittext.setVisibility(View.GONE);
                     spn_spinner.setVisibility(View.VISIBLE);
+                    loadSpinner("D2");
+
+                }else{
+
                 }
 
 
             }
         }
 
+
+    }
+    public void loadSpinner(String id) {
+        dataBaseHelper=new DataBaseHelper(mctx);
+
+        ControlList = dataBaseHelper.getDropDownList(id);
+        controlNameArray = new ArrayList<String>();
+        controlNameArray.add("-Select-");
+        int i = 1;
+        for (ControlModel district : ControlList) {
+            controlNameArray.add(district.getValue());
+            i++;
+        }
+        controladapter = new ArrayAdapter<String>(mctx,android.R.layout.simple_spinner_dropdown_item, controlNameArray);
+        spn_spinner.setAdapter(controladapter);
 
     }
 

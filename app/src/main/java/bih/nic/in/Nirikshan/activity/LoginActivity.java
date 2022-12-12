@@ -242,6 +242,8 @@ public class LoginActivity extends Activity {
                                     e.printStackTrace();
                                 }
                                 if (result.size() > 0) {
+                                    DataBaseHelper placeData = new DataBaseHelper(LoginActivity.this);
+                                    placeData.insertProvisional(result);
                                     Log.d("Resultgfg", "" + result);
                                     //setuprecyclerdata(result);
                                     start();

@@ -18,6 +18,8 @@
     <color name="colorGreyDark">#6E6A6A</color>
 
     <color name="colorGrey">#a9a9a9</color>
+    <color name="colorText">#023C51</color>
+    <color name="darker_gray">#aaa</color>
 
 
     <color name="themeBlue">#2e5883</color>

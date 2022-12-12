@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 
 import bih.nic.in.Nirikshan.adapter.InspectionFormAdapter;
 import bih.nic.in.Nirikshan.api.ApiCall;
+import bih.nic.in.Nirikshan.databasehelper.DataBaseHelper;
 import bih.nic.in.Nirikshan.entity.CommiteeDetails;
 import bih.nic.in.Nirikshan.entity.CommiteeDetailsModel;
 import bih.nic.in.Nirikshan.entity.GetInspectionFormResponse;
@@ -31,12 +33,16 @@ import retrofit2.Response;
 
 public class EducationActivity extends AppCompatActivity {
 
-    TextView tv_district,tv_block,tv_panchayat;
+    TextView tv_district,tv_block,tv_panchayat,tv_committee,tv_header,tv_Norecord;
     Toolbar toolbar;
     RecyclerView rv_edu;
-    String Unit_Id="ED";
+    RecyclerView.Adapter recyclerViewAdapterEdit;
+    RecyclerView.LayoutManager recylerViewLayoutManager1;
+    String Unit_Id="",Name="";
     ProgressDialog dialogNew;//New
     InspectionFormAdapter inspectionFormAdapter;
+    DataBaseHelper dataBaseHelper;
+    ArrayList<InspectionFormModel> listPhase2 = new ArrayList<InspectionFormModel>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,21 +57,77 @@ public class EducationActivity extends AppCompatActivity {
         //this.dialogNew.setMessage("Loading...");
 
 
-        GetInspectionFormData();
+        //GetInspectionFormData();
+
+        dataBaseHelper=new DataBaseHelper(EducationActivity.this);
+        tv_Norecord = (TextView) findViewById(R.id.tv_Norecord1);
+
+        listPhase2 = dataBaseHelper.getInspectionForm(Unit_Id);
+
+
+
+
+        if (listPhase2!= null &&listPhase2.size() > 0) {
+            tv_Norecord.setVisibility(View.GONE);
+            rv_edu.setVisibility(View.VISIBLE);
+
+        } else {
+            rv_edu.setVisibility(View.GONE);
+            tv_Norecord.setVisibility(View.VISIBLE);
+        }
+
+        recylerViewLayoutManager1 = new LinearLayoutManager(EducationActivity.this);
+
+        rv_edu.setLayoutManager(recylerViewLayoutManager1);
+        recyclerViewAdapterEdit = new InspectionFormAdapter(EducationActivity.this, listPhase2);
+
+        recyclerViewAdapterEdit.notifyDataSetChanged();
+        rv_edu.setHasFixedSize(true);
+        rv_edu.setAdapter(recyclerViewAdapterEdit);
 
 
 
     }
     public void initialization(){
         toolbar=(Toolbar) findViewById(R.id.toolbar_edu);
+        tv_header=(TextView) findViewById(R.id.tv_header);
         tv_district=(TextView) findViewById(R.id.tv_district);
         tv_block=(TextView) findViewById(R.id.tv_block);
         tv_panchayat=(TextView) findViewById(R.id.tv_panchayat);
+        tv_committee=(TextView) findViewById(R.id.tv_committee);
         rv_edu=(RecyclerView) findViewById(R.id.rv_edu);
+        rv_edu.setNestedScrollingEnabled(false);
 
         tv_district.setText(CommonPref.getCommiteeDetails(EducationActivity.this).getDist_Name());
         tv_block.setText(CommonPref.getCommiteeDetails(EducationActivity.this).getBlock_Name());
         tv_panchayat.setText(CommonPref.getCommiteeDetails(EducationActivity.this).getPanch_Name());
+        tv_committee.setText(CommonPref.getCommiteeDetails(EducationActivity.this).getCommitteeName());
+
+        Unit_Id = getIntent().getExtras().getString("VALUE");
+        //Name = getIntent().getExtras().getString("NAME");
+        if(Unit_Id.equalsIgnoreCase("ED")){
+            tv_header.setText(R.string.edu);
+        }else if(Unit_Id.equalsIgnoreCase("HP")){
+            tv_header.setText(R.string.hosp);
+        }else if(Unit_Id.equalsIgnoreCase("IC")){
+            tv_header.setText(R.string.icds);
+        }else if(Unit_Id.equalsIgnoreCase("PR")){
+            tv_header.setText(R.string.proc);
+        }else if(Unit_Id.equalsIgnoreCase("HS")){
+            tv_header.setText(R.string.sc_st);
+        }else if(Unit_Id.equalsIgnoreCase("FC")){
+            tv_header.setText(R.string.food);
+        }else if(Unit_Id.equalsIgnoreCase("RW")){
+            tv_header.setText(R.string.rural_water);
+        }else if(Unit_Id.equalsIgnoreCase("RR")){
+            tv_header.setText(R.string.status_road);
+        }else if(Unit_Id.equalsIgnoreCase("PS")){
+            tv_header.setText(R.string.panchayat_sarkar);
+        }else if(Unit_Id.equalsIgnoreCase("SL")){
+            tv_header.setText(R.string.street_light);
+        }else if(Unit_Id.equalsIgnoreCase("SI")){
+            tv_header.setText(R.string.statutory_insp);
+        }
     }
 
     public void GetInspectionFormData(){

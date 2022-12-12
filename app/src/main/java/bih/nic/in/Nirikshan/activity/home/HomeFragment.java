@@ -28,7 +28,7 @@ public class HomeFragment extends Fragment {
     public DashboardListener listenr;
 
     TextView tv_Commitee_name,tv_username,tv_desig,tv_district,tv_block,tv_panchayat;
-    RelativeLayout rl_educataion;
+    RelativeLayout rl_educataion,rl_hospital,rl_icds,rl_procurement,rl_scsthostel,rl_food,rl_ruralWater,rl_statusRoad,rl_panchayatsarkarBhawan,rl_streetlight,rl_statuiory_insp;
 
 
 
@@ -82,16 +82,110 @@ public class HomeFragment extends Fragment {
         tv_district = root.findViewById(R.id.tv_district);
         tv_block = root.findViewById(R.id.tv_block);
         tv_panchayat = root.findViewById(R.id.tv_panchayat);
+
         rl_educataion = root.findViewById(R.id.rl_educataion);
+        rl_hospital = root.findViewById(R.id.rl_hospital);
+        rl_icds = root.findViewById(R.id.rl_icds);
+        rl_procurement = root.findViewById(R.id.rl_procurement);
+        rl_scsthostel = root.findViewById(R.id.rl_scsthostel);
+        rl_food = root.findViewById(R.id.rl_food);
+        rl_ruralWater = root.findViewById(R.id.rl_ruralWater);
+        rl_statusRoad = root.findViewById(R.id.rl_statusRoad);
+        rl_panchayatsarkarBhawan = root.findViewById(R.id.rl_panchayatsarkarBhawan);
+        rl_streetlight = root.findViewById(R.id.rl_streetlight);
+        rl_statuiory_insp = root.findViewById(R.id.rl_statuiory_insp);
 
         rl_educataion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), EducationActivity.class);
+                intent.putExtra("VALUE", "ED");
+                //intent.putExtra("VALUE", "Education");
+                //intent.putExtra("NAME", R.string.edu);
+                startActivity(intent);
+            }
+        });
+        rl_hospital.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), EducationActivity.class);
+                intent.putExtra("VALUE","HP");
+                startActivity(intent);
+            }
+        });
+        rl_icds.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), EducationActivity.class);
+                intent.putExtra("VALUE", "IC");
+                startActivity(intent);
+            }
+        });
+        rl_procurement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), EducationActivity.class);
+                intent.putExtra("VALUE", "PR");
+                startActivity(intent);
+            }
+        });
+        rl_scsthostel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), EducationActivity.class);
+                intent.putExtra("VALUE", "HS");
+                startActivity(intent);
+            }
+        });
+        rl_food.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), EducationActivity.class);
+                intent.putExtra("VALUE", "FC");
+                startActivity(intent);
+            }
+        });
+        rl_ruralWater.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), EducationActivity.class);
+                intent.putExtra("VALUE", "RW");
+                startActivity(intent);
+            }
+        });
+        rl_statusRoad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), EducationActivity.class);
+                intent.putExtra("VALUE", "RR");
+                startActivity(intent);
+            }
+        });
+        rl_panchayatsarkarBhawan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), EducationActivity.class);
+                intent.putExtra("VALUE", "PS");
                 startActivity(intent);
             }
         });
 
+        rl_streetlight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), EducationActivity.class);
+                intent.putExtra("VALUE", "SL");
+                startActivity(intent);
+            }
+        });
+        rl_statuiory_insp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), EducationActivity.class);
+                intent.putExtra("VALUE", "SI");
+                startActivity(intent);
+            }
+        });
 
     }
 

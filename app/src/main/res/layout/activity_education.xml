@@ -1,301 +1,317 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent">
-
-<com.google.android.material.appbar.AppBarLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:theme="@style/AppTheme.NoActionBar.AppBarOverlay">
+    android:layout_height="match_parent">
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_edu"
-            android:layout_width="match_parent"
-            android:layout_height="?android:attr/actionBarSize"
-            android:layout_weight="1"
-            android:background="@color/colorPrimary"
-            android:theme="@style/ToolbarColoredBackArrow"
-            app:contentInsetStart="0dp"
-            app:contentInsetStartWithNavigation="0dp"
-            app:layout_scrollFlags="scroll|enterAlways|snap"
-            app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay" />
-
-        <TextView
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/header1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="left"
-            android:layout_marginLeft="100dp"
-            android:textStyle="bold"
-            android:text="Education"
-            android:textColor="@android:color/white"
-            android:textSize="14sp" />
+            android:theme="@style/AppTheme.NoActionBar.AppBarOverlay">
 
-    </RelativeLayout>
-
-</com.google.android.material.appbar.AppBarLayout>
-
-
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentTop="true"
-    android:layout_marginBottom="4dp"
-    android:orientation="vertical"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-    <LinearLayout
-        android:id="@+id/ll_showCom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_marginTop="10dp"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
-        <androidx.cardview.widget.CardView
-            android:id="@+id/edt_persn_details"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="10dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            android:layout_weight="1">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginBottom="10dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="1"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="District"
-                        android:layout_weight="0.4"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="14sp" />
-
-                    <TextView
-                        android:id="@+id/tv_designation1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text=":"
-                        android:textColor="@android:color/black"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:id="@+id/tv_district"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_weight="0.6"
-                        android:text="COM12345"
-                        android:textColor="@android:color/black"
-                        android:textSize="12sp" />
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="1"
-                    android:layout_marginTop="5dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="Block"
-                        android:layout_weight="0.4"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="14sp" />
-                    <TextView
-                        android:id="@+id/tv_designatio45n1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text=":"
-                        android:textColor="@android:color/black"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:id="@+id/tv_block"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.6"
-                        android:layout_marginLeft="10dp"
-                        android:text="CMTVER"
-                        android:textColor="@android:color/black"
-                        android:textSize="12sp" />
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="1"
-                    android:layout_marginTop="5dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:text="Panchayat"
-                        android:layout_weight="0.4"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="14sp" />
-                    <TextView
-                        android:id="@+id/tv_designatio45n671"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text=":"
-                        android:textColor="@android:color/black"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:id="@+id/tv_panchayat"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.6"
-                        android:layout_marginLeft="10dp"
-                        android:text="Vaishali"
-                        android:textColor="@android:color/black"
-                        android:textSize="12sp" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-
-
-        </androidx.cardview.widget.CardView>
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="10dp">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_edu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/doc_photo"
-        android:layout_width="match_parent"
-        android:visibility="gone"
-        android:layout_height="wrap_content"
-        android:layout_margin="2dp">
-        <RelativeLayout
-
-            android:layout_width="0dp"
-            android:layout_weight=".5"
-            android:layout_height="200dp"
-            android:padding="1dp"
-            android:background="@drawable/rect"
-            >
-            <ImageView
-                android:id="@+id/img_pic1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="fitXY"/>
-
-            <ImageView
-                android:id="@+id/viewIMG1"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_alignTop="@+id/img_pic1"
-                android:layout_alignRight="@+id/img_pic1"
-                android:onClick="onClick_ViewImg1"
-                android:src="@drawable/view"
-                android:visibility="gone"/>
-
-            <LinearLayout
-                android:id="@+id/take_pic_anganbari"
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/ic_action_photo"/>
-                <LinearLayout
-                    android:id="@+id/take_pic_anganbari1"
-                    android:layout_width="wrap_content"
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar_edu"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:attr/actionBarSize"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:theme="@style/ToolbarColoredBackArrow"
+                    app:contentInsetStart="0dp"
+                    app:contentInsetStartWithNavigation="0dp"
+                    app:layout_scrollFlags="scroll|enterAlways|snap"
+                    app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay" />
+
+                <TextView
+                    android:id="@+id/tv_header"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:layout_width="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:gravity="left"
+                    android:text="Education"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <LinearLayout
+            android:layout_below="@+id/header1"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="4dp"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <LinearLayout
+
+                android:id="@+id/ll_showCom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/header1"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="12dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/edt_persn_details"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="5dp"
-                        android:layout_gravity="center_vertical"
-                        android:text="Photo"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:textColor="@color/holo_red_dark"
-                        android:layout_gravity="center_vertical"
-                        android:text="*"/>
-                </LinearLayout>
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="District"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+
+                                <TextView
+                                    android:id="@+id/tv_district"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="COM12345"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Block"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+
+                                <TextView
+                                    android:id="@+id/tv_block"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="COM12345"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="7dp"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Panchayat"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+
+                                <TextView
+                                    android:id="@+id/tv_panchayat"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="COM12345"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Committee"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold" />
+
+
+                                <TextView
+                                    android:id="@+id/tv_committee"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="COM12345"
+                                    android:textColor="@android:color/black"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
             </LinearLayout>
-        </RelativeLayout>
-        <View
-            android:layout_width="0dp"
-            android:layout_weight=".005"
-            android:layout_height="200dp"/>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    </LinearLayout>
-
-
-
-</LinearLayout>
-
-
-<include
-    android:id="@+id/footer"
-    layout="@layout/footer"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:weightSum="2">
 
 
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_edu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_Norecord1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:text="No Record Found"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="#FF4B4B"
+                    android:textStyle="normal"
+                    android:visibility="visible" />
 
 
+<!--                <LinearLayout-->
+
+<!--                    android:background="@drawable/lin_background"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:id="@+id/lin_aadharno"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+<!--                    <TextView-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:padding="5dp"-->
+<!--                        android:textColor="@color/colorText"-->
+<!--                        android:gravity="center"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:layout_weight="0.3"-->
+<!--                        android:text="Picture"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content" />-->
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/linimg1"-->
+<!--                        android:weightSum="1"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+<!--                        <LinearLayout-->
+<!--                            android:layout_margin="10dp"-->
+<!--                            android:background="@color/darker_gray"-->
+<!--                            android:layout_weight="0.5"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="150dp">-->
+<!--                            <ImageView-->
+<!--                                android:gravity="center"-->
+<!--                                android:id="@+id/img_pic"-->
+<!--                                android:padding="10dp"-->
+<!--                                android:src="@drawable/ic_action_photo"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent" />-->
+<!--                        </LinearLayout>-->
+
+<!--                    </LinearLayout>-->
+<!--                </LinearLayout>-->
+
+                <Button
+
+                    android:id="@+id/btn_submit"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:background="@drawable/buttonshape"
+                    android:onClick="onClick_SaveContinue"
+                    android:text="Save"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            </ScrollView>
+
+
+        </LinearLayout>
+        <include
+            android:id="@+id/footer"
+            layout="@layout/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" />
+
+    </RelativeLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

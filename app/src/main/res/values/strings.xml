@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Field Inspection</string>
+    <string name="app_name">Nirikshan</string>
 
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
@@ -13,9 +13,21 @@
     <string name="menu_Profile">Profile</string>
     <string name="menu_sync">Synchronize</string>
     <string name="menu_change_password">Change Password</string>
-    <string name="menu_incentive_report">View Incentive Report </string>
+    <string name="menu_incentive_report">View Report </string>
     <string name="authenticating">Authenticating ...</string>
     <string name="authentication_failed">Authentication failed ...</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="edu">Education</string>
+    <string name="hosp">Hospitals</string>
+    <string name="icds">ICDS</string>
+    <string name="proc">Procurement</string>
+    <string name="sc_st">SC/ST/Minority Hostels</string>
+    <string name="food">Food &amp; Civil Supplies</string>
+    <string name="rural_water">Rural Water Supply</string>
+    <string name="status_road">Status Of Rural Road</string>
+    <string name="panchayat_sarkar">Panchayat Sarkar Bhawan</string>
+    <string name="street_light">Street Light</string>
+    <string name="statutory_insp">Statutory Inspection</string>
 </resources>
