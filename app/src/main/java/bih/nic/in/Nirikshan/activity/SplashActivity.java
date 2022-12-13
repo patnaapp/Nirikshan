@@ -288,6 +288,7 @@ public class SplashActivity extends AppCompatActivity {
                     i = new Intent(getApplicationContext(), LoginActivity.class);
                     startActivity(i);
                     finish();
+                    //test
                 }else {
                     Intent i;
                     i = new Intent(getApplicationContext(), CommitteeSelectionActivity.class);
