@@ -54,13 +54,17 @@ public class InspectionFormAdapter extends RecyclerView.Adapter<InspectionFormAd
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         InspectionFormModel form=inspectionFormModels.get(position);
         holder.bind(form);
-
     }
 
     @Override
     public int getItemCount() {
         return inspectionFormModels.size();
 
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -73,20 +77,18 @@ public class InspectionFormAdapter extends RecyclerView.Adapter<InspectionFormAd
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            et_edittext = (EditText) itemView.findViewById(R.id.et_edittext);
-            spn_spinner = (Spinner) itemView.findViewById(R.id.spn_spinner);
-            tv_textview = (TextView) itemView.findViewById(R.id.tv_textview);
-
-            et_edittext.setVisibility(View.GONE);
-            spn_spinner.setVisibility(View.GONE);
-
-
+            et_edittext = itemView.findViewById(R.id.et_edittext);
+            spn_spinner = itemView.findViewById(R.id.spn_spinner);
+            tv_textview = itemView.findViewById(R.id.tv_textview);
         }
 
         public void bind(InspectionFormModel equipmentOrderByFarmer) {
             if (equipmentOrderByFarmer != null) {
 
                 tv_textview.setText(equipmentOrderByFarmer.getOption_Name());
+
+                et_edittext.setVisibility(View.GONE);
+                spn_spinner.setVisibility(View.GONE);
 
                 if (equipmentOrderByFarmer.getControl_ID().equalsIgnoreCase("T1")) {
                     et_edittext.setVisibility(View.VISIBLE);

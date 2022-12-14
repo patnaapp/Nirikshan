@@ -36,7 +36,7 @@ public class EducationActivity extends AppCompatActivity {
     TextView tv_district,tv_block,tv_panchayat,tv_committee,tv_header,tv_Norecord;
     Toolbar toolbar;
     RecyclerView rv_edu;
-    RecyclerView.Adapter recyclerViewAdapterEdit;
+    InspectionFormAdapter recyclerViewAdapterEdit;
     RecyclerView.LayoutManager recylerViewLayoutManager1;
     String Unit_Id="",Name="";
     ProgressDialog dialogNew;//New
@@ -81,9 +81,11 @@ public class EducationActivity extends AppCompatActivity {
         rv_edu.setLayoutManager(recylerViewLayoutManager1);
         recyclerViewAdapterEdit = new InspectionFormAdapter(EducationActivity.this, listPhase2);
 
-        recyclerViewAdapterEdit.notifyDataSetChanged();
         rv_edu.setHasFixedSize(true);
         rv_edu.setAdapter(recyclerViewAdapterEdit);
+        //rv_edu.setNestedScrollingEnabled(true);
+        recyclerViewAdapterEdit.notifyDataSetChanged();
+
 
 
 
@@ -96,7 +98,7 @@ public class EducationActivity extends AppCompatActivity {
         tv_panchayat=(TextView) findViewById(R.id.tv_panchayat);
         tv_committee=(TextView) findViewById(R.id.tv_committee);
         rv_edu=(RecyclerView) findViewById(R.id.rv_edu);
-        rv_edu.setNestedScrollingEnabled(false);
+        //rv_edu.setNestedScrollingEnabled(false);
 
         tv_district.setText(CommonPref.getCommiteeDetails(EducationActivity.this).getDist_Name());
         tv_block.setText(CommonPref.getCommiteeDetails(EducationActivity.this).getBlock_Name());

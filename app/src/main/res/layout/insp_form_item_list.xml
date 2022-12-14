@@ -46,6 +46,7 @@
                     android:inputType="numberDecimal"
                     android:gravity="top|left"
                     android:maxLength="8"
+                    android:visibility="gone"
                     android:singleLine="false"
                     android:textColor="#222222"
                     android:textSize="15sp" />
@@ -54,6 +55,7 @@
                     android:id="@+id/spn_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
+                    android:visibility="gone"
                     android:layout_marginTop="4dp"
                     android:background="@drawable/spinner_bg1" />
             </LinearLayout>
